@@ -15,7 +15,7 @@ Puedes instalar las dependencias necesarias ejecutando el siguiente comando:
 pip install streamlit numpy matplotlib
 ```
 
-## Ejecución del proyecto
+## Ejecución del proyecto    
 
 Para ejecutar el proyecto, asegúrate de tener instalado Python 3.7 o superior en tu máquina y ejecuta el siguiente comando en la terminal:
 
