@@ -1,16 +1,29 @@
+from flask import Flask, jsonify
 import requests
 from bs4 import BeautifulSoup
 
-url = "https://www.finanzauto.com.co/portal/politicas"
+app = Flask(__name__)
 
-response = requests.get(url)
+@app.route('/scrape', methods=['GET'])
+def scrape_data():
+    url = "https://www.opinautos.com/co"
+    
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
 
-if response.status_code == 200:
-    soup = BeautifulSoup(response.content, "html.parser")
+        soup = BeautifulSoup(response.content, "html.parser")
 
-    content = soup.find_all("span", {"class": "text-primary text-2x1 font font-bold"}) + soup.find_all("p", {"class": "text-justify"})
+        info = soup.find_all("div", {
+            "class": "HomeInfographic__title"
+        })
 
-    for item in content:
-        print(item.text)
-else:
-    print(f"Error al acceder a la página. Código de estado: {response.status_code}")
+        content = [item.text.strip() for item in info]
+
+        return jsonify({"data": content}), 200
+
+    except requests.exceptions.RequestException as e:
+        return jsonify({"error": str(e)}), 500
+
+if __name__ == '__main__':
+    app.run(debug=True) 

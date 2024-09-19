@@ -1,6 +1,6 @@
 # Web Scraping de Políticas de Finanzauto
 
-Este proyecto realiza un web scraping de las políticas de la página de Finanzauto y extrae el contenido relevante utilizando Python, `requests` y `BeautifulSoup`. Los datos extraídos se guardan en un archivo de texto para su posterior análisis o uso.
+Este proyecto realiza un web scraping los titulos de la pagina de opinautos y extrae el contenido relevante utilizando Python, `requests` y `BeautifulSoup`. Los datos extraídos se guardan en un archivo de texto para su posterior análisis o uso.
 
 ## Requisitos
 
@@ -21,4 +21,4 @@ Para ejecutar el script, asegúrate de tener instalado Python 3.7 o superior en 
 python main.py
 ```
 
-Este script accede a la página web de Finanzauto, extrae el contenido relevante sobre politicas de la compañia y lo guarda en un archivo de texto llamado `politicas.txt`.
+Este script realiza una solicitud GET a la página de opinautos y extrae el contenido relevante.

@@ -1,7 +1,6 @@
 import networkx as nx
-from langgraph import LangGraph
 from transformers import pipeline
-
+import LangGraph
 G = nx.DiGraph()
 
 G.add_node("Finanzauto", description="Empresa colombiana que ofrece servicios financieros para la compra de vehículos.")
